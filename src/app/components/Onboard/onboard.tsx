@@ -1,5 +1,11 @@
 "use client";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import dynamic from 'next/dynamic';
+
+// Dynamically import chart components with no SSR
+const Bar = dynamic(() => import('react-chartjs-2').then(mod => mod.Bar), { ssr: false });
+const Line = dynamic(() => import('react-chartjs-2').then(mod => mod.Line), { ssr: false });
+const Doughnut = dynamic(() => import('react-chartjs-2').then(mod => mod.Doughnut), { ssr: false });
+
 import {
   Chart as ChartJS,
   ArcElement,
@@ -231,7 +237,13 @@ export default function Dashboard() {
 }
 
 // Reusable Card Component
-function Card({ title, value, percentage }) {
+interface CardProps {
+  title: string;
+  value: string;
+  percentage: string;
+}
+
+function Card({ title, value, percentage }: CardProps) {
   return (
     <div className="bg-white p-4 rounded-lg shadow-md">
       <h4 className="text-sm font-medium text-gray-600">{title}</h4>

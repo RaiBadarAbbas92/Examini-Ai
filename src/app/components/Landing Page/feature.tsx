@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import Tilt from 'react-parallax-tilt';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserGraduate, faChalkboardTeacher, faFileAlt, faUserCog, faSlidersH, faRobot, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 const FeatureSection = () => {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
@@ -12,37 +10,37 @@ const FeatureSection = () => {
     {
       title: "Role-Specific Experiences for Students and Teachers",
       description: "Separate, tailored interfaces for students and teachers, allowing each user to engage in a way that suits their goals.",
-      icon: faUserGraduate
+      icon: "👨‍🎓"
     },
     {
-      title: "Agentic AI Powered Intelligent Exam Creation",
+      title: "Agentic AI Powered Intelligent Exam Creation", 
       description: "Easily upload documents, select question formats, and let AI generate personalized exams in seconds.",
-      icon: faRobot
+      icon: "🤖"
     },
     {
       title: "Multiple Content Formats Supported",
       description: "Upload books, PDFs, videos, or even topics. Whether it's text, video, or document, create exams based on diverse content.",
-      icon: faFileAlt
+      icon: "📄"
     },
     {
       title: "Personalized Profile for Better Student Engagement",
       description: "Students can create profiles detailing academic interests, preferred subjects, and skill levels to receive tailor-made exam generations.",
-      icon: faUserCog
+      icon: "👤"
     },
     {
       title: "Customize Exams to Your Needs",
       description: "Set difficulty levels, timed or untimed options, and marking schemes. Create exams that meet specific teaching or learning requirements.",
-      icon: faSlidersH
+      icon: "⚙️"
     },
     {
       title: "Smart, Automated Grading for Accurate and Consistent Results",
       description: "Our AI grading engine provides quick, consistent evaluations across all question types, delivering instant feedback and tailored improvement insights for each student.",
-      icon: faChalkboardTeacher
+      icon: "👩‍🏫"
     },
     {
       title: "Detailed Results and Feedback",
       description: "Get in-depth results and feedback, complete with performance insights and recommendations for improvement.",
-      icon: faChartLine
+      icon: "📊"
     }
   ];
 
@@ -71,7 +69,7 @@ const FeatureSection = () => {
               {/* Icon */}
               <div className="flex items-center justify-center mb-4">
                 <div className="w-12 h-12 bg-opacity-25 bg-green-500 rounded-full flex items-center justify-center text-black text-xl hover:scale-110 transition-transform">
-                  <FontAwesomeIcon icon={feature.icon} color="green" size="lg" />
+                  <span className="text-2xl">{feature.icon}</span>
                 </div>
               </div>
 
